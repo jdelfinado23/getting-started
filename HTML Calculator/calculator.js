@@ -80,7 +80,7 @@ function resetCalculator() {
 }
 
 const keys = document.querySelector('.calculator__keys');
-keys.addEventListener('click', (event => {
+keys.addEventListener('click', (event) => {
     const { target } = event;
 
     if (!target.matches('button')) {
@@ -111,4 +111,4 @@ keys.addEventListener('click', (event => {
             inputDigit(value);
             break;
     }
-}));
+});
