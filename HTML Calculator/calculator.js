@@ -1,4 +1,4 @@
-const calculator = {
+var calculator = {
     displayValue: '0',
     firstOperand: null,
     waitingForSecondOperand: false,
@@ -6,7 +6,7 @@ const calculator = {
 };
 
 function updateDisplay() {
-    const display = document.querySelector('.calculator__display');
+    const display = document.querySelector('.calculatordisplay');
     display.textContent = calculator.displayValue;
 }
 
@@ -25,7 +25,7 @@ function inputDigit(digit) {
 
 function inputDecimal(dot) {
     if (calculator.waitingForSecondOperand === true) return;
-    
+
     if (!calculator.displayValue.includes(dot)) {
         calculator.displayValue += dot;
     }
@@ -46,7 +46,7 @@ function handleOperator(nextOperator) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
-        calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
+        calculator.displayValue = $;{parseFloat(result.toFixed(7))}
         calculator.firstOperand = result;
     }
 
@@ -79,9 +79,11 @@ function resetCalculator() {
     updateDisplay();
 }
 
-const keys = document.querySelector('.calculator__keys');
-keys.addEventListener('click', (event) => {
-    const { target } = event;
+var keys = document.getElementsByClassName('calculatorkeys')[0];
+if (keys != null)
+{
+keys.addEventListener('click', (e) => {
+    const { target } = e;
 
     if (!target.matches('button')) {
         return;
@@ -112,3 +114,4 @@ keys.addEventListener('click', (event) => {
             break;
     }
 });
+}
